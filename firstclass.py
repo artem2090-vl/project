@@ -22,6 +22,22 @@ class Motorcycl:
            return f"Власник: {self.__owner[0:3]}*******"
 
 
+class Gear(Motorcycl):
+    
+    def __init__(self, mark_user, type_user, cub_user, owner_user, gear_user):
+        super().__init__(mark_user, type_user, cub_user, owner_user)
+        self.gear = gear_user   
+    def show_gear(self):
+        print(f"Кількість передач: {self.gear}")
+    
+    def show_all_info(self):
+        self.show_moto()
+        self.show_type()
+        self.show_cub()
+        print(self.show_owner())
+        self.show_gear()
+
+
 
 mark_user = input("Введи марку мотоцикла: ")
 type_user = input("Введи тип мотоциклу:")
@@ -32,8 +48,19 @@ owner_user = input("Введи імя власника:")
 
 moto = Motorcycl(mark_user, type_user, cub_user, owner_user)
 
-moto.show_moto()
-moto.show_type()
-moto.show_cub()
-print(moto.show_owner())
+#moto.show_moto()
+#moto.show_type()
+#moto.show_cub()
+#print(moto.show_owner())
 #print(moto.owner)
+
+      
+        
+gear_user = input("Введи кількість передач:")
+gear = Gear(mark_user, type_user, cub_user, owner_user, gear_user)
+
+
+gear.show_all_info()
+
+
+
